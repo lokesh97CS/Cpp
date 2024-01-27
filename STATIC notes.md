@@ -227,4 +227,29 @@ int main() {
     MyClass::myfunction(); // call a static member function
 }
 ```
+# this is example of static case
+unctions declared static are not given global visibility <br>
+The use of static in this context does not affect the behavior of the function itself, but rather it specifies that the function should only be visible within the same source file where it is declared.<br>
+If this function is defined in a header file and included in multiple source files, each source file will have its own separate copy of the print function.<br>
+In this example, the print function is declared as static, but in this context, it doesn't change the behavior of the function. It simply indicates that the function is intended for use only within the same translation unit.
+```
+#include <iostream>
+
+// Standalone static function with internal linkage
+static void print(const auto &c) {
+    for (auto i : c) {
+        std::cout << i << ", ";
+    }
+    std::cout << '\n';
+}
+
+int main() {
+    // Example usage of the print function
+    int arr[] = {1, 2, 3, 4, 5};
+    print(arr);
+
+    return 0;
+}
+
+```
 
