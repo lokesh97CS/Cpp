@@ -10,7 +10,8 @@
 ```
  x = (1<<k) ^ x
 ```
-4.Lets say 11011000 => want to 1101 0000 , want to make all clear include right most set bit
+4.Lets say 11011000 => want to 1101 0000 , want to make all clear include right most set bit<br>
+this is equivalent to setting rmb as zero
 ```
  x = x &(x-1)
 x =     11011000
